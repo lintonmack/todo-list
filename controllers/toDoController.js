@@ -15,6 +15,13 @@ function toDoController (app) {
         res.render('home', {
             toDos: toDos.getItems()
         })
+    }),
+    app.delete('/', urlencodedParser, function (req, res) {
+        toDos.removeItem(req.body.id)
+
+        res.render('home', {
+            toDos: toDos.getItems()
+        })
     })
 }
 
