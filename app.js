@@ -1,4 +1,10 @@
 var express = require('express')
+require('dotenv').config()
+var mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL, {
+    useMongoClient: true
+})
+
 var exphbs = require('express-handlebars')
 var app = express()
 
